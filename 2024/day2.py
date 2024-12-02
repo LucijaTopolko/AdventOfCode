@@ -4,12 +4,12 @@ for i in range(0, len(lines)):
     lines[i] = lines[i].split("\n")[0]
 
 def issafe(l):
-    direction = l[0]< l[1]
+    increasing = l[0] < l[1]
     for j in range(1, len(l)):
-        if direction and l[j - 1] >= l[j]:
+        if increasing and l[j - 1] >= l[j]:
             return False
         else:
-            if not direction and l[j-1] <= l[j]:
+            if not increasing and l[j-1] <= l[j]:
                 return False
         if not 1 <= abs(l[j-1] - l[j]) <= 3:
             return False
