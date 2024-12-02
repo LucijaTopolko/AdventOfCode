@@ -1,4 +1,4 @@
-file = open("2024/inputi/input.txt", "r")
+file = open("2024/inputi/day2.txt", "r")
 lines = file.readlines()
 for i in range(0, len(lines)):
     lines[i] = lines[i].split("\n")[0]
