@@ -5,30 +5,23 @@ for i in range(0, len(lines)):
 
 def issafe(l):
     increasing = l[0] < l[1]
+    if not(l == sorted(l) or l == sorted(l, reverse=True)):
+        return False
     for j in range(1, len(l)):
-        if increasing and l[j - 1] >= l[j]:
-            return False
-        else:
-            if not increasing and l[j-1] <= l[j]:
-                return False
         if not 1 <= abs(l[j-1] - l[j]) <= 3:
             return False
     return True
     
-
 print("***** PART 1 *****")
-
 count = 0
 
 for line in lines:
     l = list(map(int, line.split()))
     if issafe(l):
         count += 1
-
 print(count)
 
 print("***** PART 2 *****")
-
 count = 0
 
 for line in lines:
@@ -42,5 +35,4 @@ for line in lines:
         if issafe(temp):
             count += 1
             break
-    
 print(count)
