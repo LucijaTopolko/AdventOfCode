@@ -1,5 +1,3 @@
-import time
-
 file = open("2024/inputi/day6.txt", "r")
 lines = file.readlines()
 for i in range(0, len(lines)):
